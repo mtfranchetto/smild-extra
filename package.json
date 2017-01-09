@@ -5,11 +5,15 @@
     "type": "git",
     "url": "https://github.com/mtfranchetto/smild-extra"
   },
+  "main": "dist/smild-extra.js",
   "scripts": {
     "build": "tsc --outDir ./dist"
   },
   "engines": {
     "node": ">=5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "~6.0.58"
+  }
 }
