@@ -1,15 +1,19 @@
 {
   "name": "smild-extra",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/mtfranchetto/smild-extra"
   },
+  "main": "dist/smild-extra.js",
   "scripts": {
     "build": "tsc --outDir ./dist"
   },
   "engines": {
     "node": ">=5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "~6.0.58"
+  }
 }

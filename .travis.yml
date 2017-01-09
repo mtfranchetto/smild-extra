@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '6'
+install:
+- npm install typescript@2.1.4 -g
+- npm install
+script: npm run build
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: mt.franchetto@gmail.com
+  api_key:
+    secure: m0wSpJie/jFZeYhpKAPjtoLuOGhVjGSpnLycvTg4nYQl6c20NrYYYlj5kWM++T3NppQERz6wVwqMGveOcQGmlsZA0BOsViaYC91AybMo+A+IzAGKhxQ/YqLJ15vuEOcIvbQsn5P9TOgrfI7rsW78AFaJR5Rf2+mRU4HN7WCCog4oxjNLnKvLwF3erhBgCprs5OFaYr0D724xAZ/8qHxWExScg4y8DWSNUj1qIUKgSugB2K+K91mm5EpSfjAN5w5tyncH5F/1l7kM/VaBYPPEmm2DPifrPYnb6zcax20+fwv8vWfqxL5hboSJ8Dlcl4hnBhukv4Q5LIFH1YG0UO9K34tU/hSYwWrGCA3B3JOXk2aJJaJdB0i0msvAFv5rj+fOvnIFwLW0obV6yLNzZ81tSCgeUAXR7sAb5AOWH+1TObHtsKKBj0M+vClu4EqzLztEIIrcSkp1wGeWusOvlxz3rcI7Hu0V4NdR5snzx0PG//djtjsiIm9u7CqRCwi7n6m9v4hiVRbz1I6rBDiEBbHxgJX31nXhJKK8bz9yrbFFbEfGe7X1iiAzCvKRMoGkM+R0txBdxYrdxiKrsn943AbMla+de5u4hUbz1Eb1coj0CzeHU5HfDLR1UgfJciyAY0umYiRUfWI2+LeN9RvRJIxsN81GZWxntaI5wNCBt3UcMy0=
+  on:
+    branch: master
+    repo: mtfranchetto/smild-extra
+    tags: false
