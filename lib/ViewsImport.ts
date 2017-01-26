@@ -12,7 +12,7 @@ export default (options: {views: string} = defaultOptions) => {
             return name[0].toUpperCase() + name.slice(1);
         }
     });
-    const exportFolder = path.join(process.cwd(), options.views + "/export.js");
+    const exportFolder = path.join(process.cwd(), options.views, "export.js");
     process.env.EXPORT_VIEWS_PATH = exportFolder;
     fs.writeFileSync(exportFolder, 'module.exports = ' + JSON.stringify(views).replace(/"/gmi, ''));
     return Promise.resolve();
