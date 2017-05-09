@@ -37,9 +37,7 @@ export default function requireModels(options: any) {
         } else {
             var match = file.match(filter);
             if (!match) return;
-            let [viewmodelId, key] = match[1].split(".")
-            modules[map(viewmodelId, filepath)] = modules[map(viewmodelId, filepath)] || {};
-            modules[map(viewmodelId, filepath)][key || "default"] = "require('" + filepath + "')";
+            modules[map(match[1], filepath)] = "+require('" + filepath + "')+";
         }
     });
 
