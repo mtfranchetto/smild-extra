@@ -2,15 +2,12 @@ import * as fs from "fs";
 import * as path from "path";
 import RequireModels from "./RequireModels";
 
-export default () => {
+export default (modelPath: string = "scripts/backend") => {
     var backend = RequireModels({
-        dirname: path.join(process.cwd(), "backend-mock-data"),
-        filter: /(.+)\.json$/,
-        map: function (name) {
-            return name[0].toUpperCase() + name.slice(1);
-        }
+        dirname: path.join(process.cwd(), modelPath),
+        filter: /(.+)\.json$/
     });
-    const exportFolder = path.join(process.cwd(), "backend-mock-data", 'export.js');
-    fs.writeFileSync(exportFolder, 'module.exports = ' + JSON.stringify(backend).replace(/"/gmi, ''));
+    const exportFolder = path.join(process.cwd(), modelPath, 'export.js');
+    fs.writeFileSync(exportFolder, 'module.exports = ' + JSON.stringify(backend).replace(/"\+/gmi, '').replace(/\+"/gmi, ''));
     return Promise.resolve();
 }
